@@ -10,4 +10,12 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend';
+  // public term : string
+  // public isTokenThere : boolean
+
+  constructor(private router: RouterOutlet) {
+    console.log("Hola");
+  }
+
+  //TODO escribir la busqueda
 }
