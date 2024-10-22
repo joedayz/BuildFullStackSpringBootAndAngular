@@ -4,8 +4,10 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
+  imports: [
+    RouterOutlet
+  ],
   styleUrl: './app.component.css'
 })
 export class AppComponent {
@@ -13,7 +15,7 @@ export class AppComponent {
   // public term : string
   // public isTokenThere : boolean
 
-  constructor(private router: RouterOutlet) {
+  constructor() {
     console.log("Hola");
   }
 
