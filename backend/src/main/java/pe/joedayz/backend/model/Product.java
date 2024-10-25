@@ -27,7 +27,7 @@ public class Product {
   @Column(nullable = false, length = 4000)
   private String description;
 
-  @Column(nullable = false, precision = 10, scale = 2)
+  @Column(nullable = false, precision = 10)
   private double price;
 
   @Temporal(TemporalType.TIMESTAMP)
