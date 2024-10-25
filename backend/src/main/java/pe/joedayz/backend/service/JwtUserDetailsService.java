@@ -11,7 +11,7 @@ import pe.joedayz.backend.model.User;
 import pe.joedayz.backend.repo.UserRepository;
 
 @Service
-public class JwtUserDetailService implements
+public class JwtUserDetailsService implements
     UserDetailsService {
 
   @Autowired
