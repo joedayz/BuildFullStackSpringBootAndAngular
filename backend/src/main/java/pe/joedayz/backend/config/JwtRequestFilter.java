@@ -18,11 +18,13 @@ import pe.joedayz.backend.service.JwtUserDetailsService;
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-  @Autowired
   private JwtUserDetailsService jwtUserDetailsService;
-
-  @Autowired
   private JwtUtil jwtUtil;
+
+  public JwtRequestFilter(JwtUserDetailsService jwtUserDetailsService, JwtUtil jwtUtil) {
+    this.jwtUserDetailsService = jwtUserDetailsService;
+    this.jwtUtil = jwtUtil;
+  }
 
   @Override
   protected void doFilterInternal(HttpServletRequest httpServletRequest,

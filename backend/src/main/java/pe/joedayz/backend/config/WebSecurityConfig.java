@@ -23,14 +23,16 @@ import org.springframework.web.cors.CorsConfiguration;
 @EnableMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig{
 
-  @Autowired
   private AuthenticationEntryPoint jwtAuthenticationEntryPoint;
-
-  @Autowired
   private JwtRequestFilter jwtRequestFilter;
-
-  @Autowired
   private UserDetailsService jwtUserDetailsService;
+
+  public WebSecurityConfig(AuthenticationEntryPoint jwtAuthenticationEntryPoint,
+      JwtRequestFilter jwtRequestFilter, UserDetailsService jwtUserDetailsService) {
+    this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
+    this.jwtRequestFilter = jwtRequestFilter;
+    this.jwtUserDetailsService = jwtUserDetailsService;
+  }
 
   @Bean
   public PasswordEncoder passwordEncoder() {

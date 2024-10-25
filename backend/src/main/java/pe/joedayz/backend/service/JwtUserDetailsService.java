@@ -1,7 +1,6 @@
 package pe.joedayz.backend.service;
 
 import java.util.ArrayList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,12 +13,13 @@ import pe.joedayz.backend.repo.UserRepository;
 public class JwtUserDetailsService implements
     UserDetailsService {
 
-  @Autowired
   private UserRepository repo;
-
-  @Autowired
   private PasswordEncoder bcryptEncoder;
 
+  public JwtUserDetailsService(UserRepository repo, PasswordEncoder bcryptEncoder) {
+    this.repo = repo;
+    this.bcryptEncoder = bcryptEncoder;
+  }
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
